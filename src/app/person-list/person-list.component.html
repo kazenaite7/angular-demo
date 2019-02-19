@@ -1,0 +1,69 @@
+<h2>List of persons</h2>
+
+<!--<div ngClass="listColorGreen">-->
+  <!--<div *ngFor="let person of personsList" [ngStyle]="{'color': person.groups==null ? 'green': 'red'}">-->
+
+    <!--<p>{{person.name}} {{person.surname}}</p>-->
+    <!--<p>pid: {{person.pid}}</p>-->
+
+    <!--<p *ngIf="person.email!=null || person.phone!=null">Contacts {{person.email}}  {{person.phone}}</p>-->
+
+    <!--<p *ngIf="person.groups==null">No groups</p>-->
+    <!--<p *ngIf="person.groups!=null">{{person.groups.length}} groups: {{person.groups}}</p>-->
+
+  <!--</div>-->
+<!--</div>-->
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">PID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Surname</th>
+    <th scope="col">Contact</th>
+    <th scope="col">Groups</th>
+  </tr>
+  </thead>
+
+    <tbody class="list-group" *ngFor="let person of personsList"
+           [ngStyle]="{'color': person.groups==null ? 'green': 'red'}" app-person-details [person]="person" (deletePerson)="deletePerson($event,person)">
+
+    <!--<tr *ngFor="let person of persons" app-person-details-->
+        <!--[person]="person" (deletePerson)="deletePerson($event)">-->
+    <!--</tr>-->
+
+    <!--<app-person-details [person]="person" (deletePerson)="deletePerson($event,person)"></app-person-details>-->
+    </tbody>
+</table>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">First</th>
+    <th scope="col">Last</th>
+    <th scope="col">Handle</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">1</th>
+    <td>Mark</td>
+    <td>Otto</td>
+    <td>@mdo</td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Jacob</td>
+    <td>Thornton</td>
+    <td>@fat</td>
+  </tr>
+  <tr>
+    <th scope="row">3</th>
+    <td>Larry</td>
+    <td>the Bird</td>
+    <td>@twitter</td>
+  </tr>
+  </tbody>
+</table>
+
